@@ -17,3 +17,8 @@
 
 `dropdb <dbname>`
 `createdb --username=<username> --owner=<username> <dbname>`
+
+### Invoice Producer and Consumer
+- InvoicePublisher produces simple invoice payload every 5 seconds
+- InvoiceConsumer consumes them as soon as it is published.
+- todo: Currently immediate ack and prefetch is done which needs to be stopped
