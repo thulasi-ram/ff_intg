@@ -26,7 +26,13 @@ public class InvoiceRouter extends RouteBuilder {
                 .setHeader("invoiceID", simple("${body.get('payload').get('invoice').get('entity').get('id')}"))
                 .setHeader("CamelFileName", simple("${headers.invoiceID}.json"))
                 .marshal().json()
-                .toD("file:invoices/${headers.accountID}");
+                .toD("file:invoices/${headers.accountID}")
+                .convertBodyTo(String.class)
+                .setHeader("auditEntityID", simple("${headers.invoiceID}"))
+                .setHeader("auditEntityType", constant("create_invoice"))
+                .setHeader("auditEntityPayload", simple("${body.toString()}"))
+                .to("sql:classpath:sql/invoice_audit.sql")
+        ;
     }
 
 }
