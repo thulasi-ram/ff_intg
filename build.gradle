@@ -49,6 +49,13 @@ dependencies {
 
 }
 
+tasks.withType(Test) {
+    doFirst {
+        println "*** ENVIRONMENT VARIABLE DUMP ***"
+        environment.each { k, v -> println "${k}:${v}" }
+    }
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
