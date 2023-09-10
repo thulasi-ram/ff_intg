@@ -24,6 +24,9 @@
 - todo: Currently immediate ack and prefetch is done which needs to be stopped
 - The stored json triggeres another camel route which starts a temporal workflow
 
+![ff class diagram](./static/ff_class_diagram.svg)
+
+
 ## Docker
 `docker-compose up --build -d`
 
