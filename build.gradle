@@ -31,6 +31,8 @@ dependencies {
     implementation 'org.apache.camel.springboot:camel-jackson-starter:4.0.0'
     implementation 'org.apache.camel.springboot:camel-sql-starter:4.0.0'
     implementation 'org.apache.camel.springboot:camel-file-watch-starter:4.0.0'
+    implementation 'org.apache.camel:camel-test-spring-junit5:4.0.0'
+    implementation 'org.apache.camel:camel-test-junit5:4.0.0'
 
     implementation "org.flywaydb:flyway-core:9.22.0"
     implementation 'io.temporal:temporal-sdk:1.21.1'
