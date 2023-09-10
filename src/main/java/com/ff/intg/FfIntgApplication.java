@@ -11,7 +11,9 @@ import java.util.Arrays;
 @SpringBootApplication
 public class FfIntgApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FfIntgApplication.class, args);
+        ApplicationContext applicationContext = SpringApplication.run(FfIntgApplication.class, args);
+        TemporalWorker worker = applicationContext.getBean(TemporalWorker.class);
+        worker.setup();
     }
 
     @Bean

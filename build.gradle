@@ -30,8 +30,14 @@ dependencies {
     implementation 'org.apache.camel.springboot:camel-spring-rabbitmq-starter:4.0.0'
     implementation 'org.apache.camel.springboot:camel-jackson-starter:4.0.0'
     implementation 'org.apache.camel.springboot:camel-sql-starter:4.0.0'
+    implementation 'org.apache.camel.springboot:camel-file-watch-starter:4.0.0'
 
     implementation "org.flywaydb:flyway-core:9.22.0"
+    implementation 'io.temporal:temporal-sdk:1.21.1'
+    implementation "io.temporal:temporal-spring-boot-starter-alpha:1.21.1"
+    implementation 'org.slf4j:slf4j-log4j12:1.7.29'
+    implementation "org.apache.pdfbox:pdfbox:3.0.0"
+
 
     // development
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
