@@ -37,6 +37,7 @@ public class InvoiceWorkflowTrigger extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("file-watch://invoices?events=CREATE&antInclude=**/*.json")
+                .routeId("InvoiceWorkflowTrigger")
                 .log("File event: ${header.CamelFileEventType} occurred on file ${header.CamelFileName} at ${header.CamelFileLastModified}")
                 .process(new InvoiceWorkflowTriggerProcessor())
         ;

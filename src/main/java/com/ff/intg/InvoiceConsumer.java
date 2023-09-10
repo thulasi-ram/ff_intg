@@ -10,6 +10,7 @@ public class InvoiceConsumer extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("spring-rabbitmq:invoices_exchange?queues=invoices_queue&routingKey=invoices.*")
+                .routeId("InvoiceConsumer")
                 .log(LoggingLevel.INFO, "consuming invoice")
                 .unmarshal().json(JsonLibrary.Jackson)
                 .setHeader("accountID", simple("${body.get('account_id')}"))
