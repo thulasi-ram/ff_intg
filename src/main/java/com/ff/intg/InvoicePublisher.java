@@ -51,7 +51,7 @@ public class InvoicePublisher extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("timer:publish_invoices_every_second?period=5000")
+        from("timer:publish_invoices_every_second?period=30000")
                 .process(new InvoiceCamelProcessor())
                 .log(LoggingLevel.INFO, "Publishing message:${body}").
                 to("spring-rabbitmq:invoices_exchange?routingKey=invoices.create");
